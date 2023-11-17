@@ -1,0 +1,22 @@
+
+public class Simple_Loop 
+{
+
+	public static void main(String[] args) 
+	{
+		// TODO Auto-generated method stub
+ countSumNums();
+	}
+
+	private static void countSumNums() {
+		// SumNum loops
+		
+		for (int i= -4; i<= 86; i +=18)
+		{
+			
+			System.out.println(i);
+			//print out the loop
+		}
+
+	}
+}
