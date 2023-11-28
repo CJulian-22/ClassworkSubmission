@@ -1,0 +1,46 @@
+
+public class Cake
+{
+// properties of cake
+	
+	String fillings = new String();
+	int layer;
+	
+	public Cake(String a, int l)
+	{
+		this.layer = l;
+		this.fillings = a;
+		
+	}
+	public Cake (String a) 
+	{
+		
+		this.fillings = a;
+		this.layer = 1;
+}
+	public String tellFillings()
+	/**
+	 * This allows us to instantiate a cake.
+	 * @param string determines the fillling of the cake
+	 */
+	{
+		return (this.fillings);
+	}
+	public int tellLayers()
+	{
+		return(this.layer);
+	}
+	public void setFilllings (String newFillings)
+	{
+		this.fillings = newFillings;
+	}
+	public void yumCheck()
+	{
+		System.out.println("This Cake is Bakalicious");
+	}
+	public void incrementLayer(int l)
+	{
+		layer++;
+}
+}
+
