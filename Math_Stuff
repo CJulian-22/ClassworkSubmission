@@ -1,0 +1,38 @@
+public class MathStuff {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		int myInt= -4;
+		double myDub= -16.0;
+		
+		double mySqrt = Math.sqrt(myDub);
+		System.out.println(mySqrt);
+		
+		
+		double myAbsNum = Math.abs(myDub);
+		System.out.println(myAbsNum);
+		
+		double myAbsInt = Math.abs(myInt);
+		System.out.println(myAbsInt);
+		
+		
+		
+		//call method
+		multTwoNums(3,4);
+	}
+
+	private static void multTwoNums(int i, int j) {
+		// create the method
+		//multiply the two ints
+		
+		int x =i;
+		for(; j>1;j--)
+		{
+			i*=x;
+			
+		}
+	System.out.println(i);
+}
+}		
+	
