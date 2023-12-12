@@ -1,38 +1,77 @@
-public class MathStuff {
+import java.util.Random;
+
+public class Math_Stuffs_PT2 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		int myInt= -4;
-		double myDub= -16.0;
-		
-		double mySqrt = Math.sqrt(myDub);
-		System.out.println(mySqrt);
-		
-		
-		double myAbsNum = Math.abs(myDub);
-		System.out.println(myAbsNum);
-		
-		double myAbsInt = Math.abs(myInt);
-		System.out.println(myAbsInt);
-		
-		
-		
-		//call method
-		multTwoNums(3,4);
+	//generate random number [1-10]
+	Random nums = new Random();
+	int answer = nums.nextInt(10) + 1;
+
+	//print random number between 1-10
+	System.out.println(answer);
+
+	//declare int with value of -36
+	int IntA = -36;
+
+	//declare int with value of 12
+	int IntB = 12;
+
+	//declare double with value of 100.0
+	double DubA = 100.0;
+
+	//declare double with value of 0.64
+	double DubB = 0.64;
+
+	//instantiate double with value of 100.0
+	Double DoubleA = 100.0;
+
+	//instantiate double with value of 0.64
+	Double DoubleB = 0.64;
+
+	//instantiate integer with value of -36
+	Integer IntegerA = -36;
+
+	//instantiate integer with value of 12
+	Integer IntegerB = 12;
+
+	//calls method that multiplies int
+	multNums(IntA,IntB);
+
+	//calls method that multiplies int objects
+	multNums(IntegerA, IntegerB);
+
+	//calls method that multiplies ints
+	//casts doubles as ints before multiplying
+	multNums((int) DubA, (int) DubB);
+
+	//calls method that multiplies ints
+	//finds int value of double before multiplying
+	multNums((DoubleA.intValue()), DoubleB.intValue());
+
+
 	}
 
-	private static void multTwoNums(int i, int j) {
-		// create the method
-		//multiply the two ints
-		
-		int x =i;
-		for(; j>1;j--)
+	//method that multiplies one int by another
+	private static void multNums(int x, int y) 
+
 		{
-			i*=x;
-			
+
+		//declares an int for the multiplier
+		int adder = x;
+		//sets up for loop that runs as many times as y
+		for (int i = 1; i < y; i++)
+
+		{
+
+			//add x to itself
+			x += adder;
+
 		}
-	System.out.println(i);
+
+		//print the final value when  the loop  cant run anymore
+		System.out.println(x);
+
+	}		
 }
-}		
-	
