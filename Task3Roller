@@ -1,0 +1,44 @@
+import java.util.Scanner;
+
+public class Roller_OF_DICE {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+Scanner myReader = new Scanner (System.in);
+
+String str = myReader.nextLine();
+getNums(str);
+
+
+myReader.close();
+
+
+		
+
+	}
+
+	private static void getNums(String str) {
+		// TODO Auto-generated method stub
+		String left = str.substring(0,str.indexOf("d"));
+
+		String right = str.substring(str.indexOf("d")+ 1,str.length());
+
+		System.out.println(left + " " + right);
+		turnInt(left,right);
+	}
+
+	private static void turnInt(String left, String right) {
+		// TODO Auto-generated method stub
+		int a = Integer.valueOf(left);
+		//turn the first string into int a
+		int b = Integer.valueOf(right);
+		//turn the first string into int b
+		
+		
+		System.out.print(" The first number is " + a);
+		System.out.print(" and the second number is " + b );
+		System.out.print(". Their sum is " );
+		System.out.println(a+b);
+		//add int a and int b
+		randomRoll(a,b);
+	
