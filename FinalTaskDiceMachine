@@ -1,0 +1,94 @@
+java.util.Scanner;
+
+public class DiceMachine 
+{
+	public static void main(String[] args) 
+	{
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Welcome to Dice Roller!");
+		String input = scan.nextLine();
+		System.out.println("");
+		String noSpaces = removeSpaces(input);
+		splitDice(noSpaces);
+		scan.close();
+	}
+	
+	public static String removeSpaces(String str)
+	{
+		int spaceIndex = 0; //declare int  to be 0 
+		String noSpaces = new String(""); //instantiate a new String, called noSpaces, which will store the str value without spaces
+		for (int i = 0; i < str.length(); i++) //for loop, which declares int i as zero and increments it until it is not less than the length of str (using length() method)
+		//this ensures the loop runs the proper amount of times
+		{
+			if (str.charAt(i) != ' ') //if statement to check if the character does not equal then keep adding till
+			{
+				noSpaces += str.charAt(i) ;//
+				spaceIndex = i; //reassigns spaceIndex as the current index (stores current space's index to be used during next iteration)
+			}
+		}
+		
+				return noSpaces; //return noSpaces
+				
+	}
+
+	public static void splitDice(String str)
+	{
+		String original = str;
+		int total = 0;
+		for (int i = 1; i <= countPlus(original) + 1; i++)
+		{
+			int d = str.indexOf('d');
+			int plus = str.indexOf('+');
+			if (d > 0 && plus > 0)
+			{
+
+				int count = Integer.valueOf(str.substring(0, d));
+				int faces = Integer.valueOf(str.substring(d+1, plus));
+				total += rollDice(count, faces);
+				str = str.substring(plus+1);
+				System.out.println("You rolled " + count + " " + faces + "faced die.");
+			}
+
+			else if (d > 0 && plus == -1) 
+			{
+				int count = Integer.valueOf(str.substring(0, d));
+				int faces = Integer.valueOf(str.substring(d+1));
+				total += rollDice(count, faces); 
+				str = "";
+				System.out.println("You rolled " + count + " " + faces + "faced die.");	
+			}
+			else if (d == -1 && plus == -1)
+			{
+				int modifier = Integer.valueOf(str);
+				total += modifier;
+				System.out.println("You added " + modifier + ".");
+			}
+		}
+		System.out.println("The total for the dice is " + total + "!");
+	}
+
+	public static int countPlus(String str)
+	{
+		int count = 0; //declare an int, named count, to keep track of the number of occurrences of the char in the String
+		for (int i = 0; i < str.length(); i++) //for loop, which declares int i as zero and increments it until it is not less than the length of the String (using length() method)
+		//this ensures the loop runs the proper amount of times
+		{
+			if (str.charAt(i) == '+') //if statement to check if the character at the ith index of the String matches the char value (using charAt() method)
+			//this ensures each character of the String is checked
+			{
+				count++; //adds one to the character count when if statement is true
+			}
+		}
+		return count; //returns character count
+	}
+	public static int rollDice(int a, int b)
+	{
+		int value = 0; //the final value of total dic rolls
+		for (int i = 1; i <= a; i++) //for loop which declares an int i and increments it by 1 until it is not less than or equal to a
+		//this ensures that the correct number of dice is rolled
+		{
+			value += (b * Math.random() + 1); //uses random method, multiplied by b and added to 1, to generate a random number between 1 and the face number
+			//the result of each die is added to the final value
+		}	
+		return value;
+	}
