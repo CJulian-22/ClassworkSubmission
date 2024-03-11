@@ -1,0 +1,46 @@
+
+public class WorkArray {
+
+	public static void main(String[] args) {
+		
+		
+		double [] arr = { 6.1, 2.1, 1.9};
+		int [] nums = { 9, 17, 14, 8, 7, 4, 14 };
+		System.out.println(SumArrElements( arr ));
+		
+		int [] brr = MakeEveryOther( nums );
+		
+		printArr(brr);
+	}
+
+	private static int[] MakeEveryOther(int[] nums) {
+		// TODO Auto-generated method stub
+		
+		
+		for ( int i = 1; i <= nums.length - 1; i+= 2)
+		{
+			nums[i] = 1;
+		}
+		
+		return nums;
+	}
+
+	private static double SumArrElements(double[] arr) {
+		// TODO Auto-generated method stub
+		double a = 0;
+		
+		for ( int i = 0; i <= arr.length - 1; i++)
+		{
+			a += arr[i];
+		}
+		return a;
+	}
+	public static void printArr ( int[] arr )
+	{
+		
+		for ( int i = 0; i <= arr.length - 1; i++)
+		{
+			System.out.print(arr[i] + " ");
+		}
+	}
+}
