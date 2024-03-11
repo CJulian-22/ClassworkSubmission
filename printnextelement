@@ -1,0 +1,15 @@
+public class PrintPrevNextElement 
+{
+	public static void main(String[] args) 
+	{
+		double[] arr = {2.45, 5.28, 4.86, 6.73, 4.64, 4.94, 9.79}; //declare  array,  assign it double data types
+		int index = 3; //declare int, named index, and assign it 3
+		printPreNextElement(arr, index); //call print, passing it arr and index
+	}
+	
+	public static void printPreNextElement(double[] nums, int n)
+	{
+		System.out.println("The number before index " + n + " is " + nums[n-1] + "."); 
+		System.out.println("The number after index " + n + " is " + nums[n+1] + "."); 
+	}
+}
