@@ -1,0 +1,55 @@
+/*
+ * Create a Student class that is meant to store the grades of a student.
+ * 
+ * create three attriubutes: scienceGrade, mathGrade, theoGrade,a constructor,
+ * and methods.
+ */
+public class Student 
+{
+	//list the  attributes
+	private double scienceGrade;
+	private double mathGrade;
+	private double theoGrade;
+	private int gradeLevel;
+	String studentName = new String ();
+
+	/**
+	 * make Student objects.
+	 * pass numbers to be the initial values
+	 * for the data 
+	 * @param a 
+	 * @param b
+	 * @param c
+	 * @param d
+	 * @param e
+	 */
+	public Student(double a, double b, double c, int d, String e)
+	{
+		scienceGrade = a;
+		mathGrade = b;
+		theoGrade = c;
+		gradeLevel = d;
+		studentName = e;
+	}
+
+	/**
+	 * Create a method that returns average of all grades 
+	 * @return GPA = Average GPA
+	 */
+
+	public double getGPA()
+	{
+		double GPA = (scienceGrade + mathGrade + theoGrade) / 3;
+
+		return GPA;
+	}
+
+	//create method
+	public void introduceSelf()
+	{
+		System.out.println("I'm in grade " + gradeLevel
+				+ ".\n" + "My name is " + studentName + ".\n"
+				+ "The average GPA i have is " + getGPA());
+	}
+
+}
