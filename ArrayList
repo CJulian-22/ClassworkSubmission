@@ -1,0 +1,45 @@
+import java.util.ArrayList;
+
+public class ArrayListIntro 
+{
+
+	public static void main(String[] args) 
+	{
+		//Create an empty ArrayList studentNames of Strings
+		ArrayList<String> studentNames = new ArrayList<String>();
+		
+		// Add the following String literals to studentNames: "Alice" = John, 
+		//"Charlie" = kai, "Dave" = fran, "Elizabeth" = justin, "Fieri" = homey,
+		//"Gwen" = Malu. The ArrayList should hold them in this order. 
+		//Print the ArrayList to make sure it is organized correctly.
+		studentNames.add("John");
+		studentNames.add("Kai");
+		studentNames.add("Fran");
+		studentNames.add("Justin");
+		studentNames.add("Homey");
+		studentNames.add("Malu");
+		
+		//check
+		System.out.println(studentNames);
+		
+		//Now add = Gabe directly after john
+		studentNames.add(1, "Gabe");
+		
+		//Charlie-Kai got expelled. Remove her from the ArrayList. 
+		studentNames.remove(2);
+		
+		// I forgot who is at the 2 index. 
+		//Please get the value of the String literal at index 2 and then print studentNames.
+		System.out.println(studentNames.get(2));
+		System.out.println(studentNames);
+		
+		//Justin had a name change.
+		//Set the value of the String literal where "Justin" is to "Raping".
+		studentNames.set(3, "Raping");
+		
+		System.out.println(studentNames);
+		
+		
+	}
+
+}
