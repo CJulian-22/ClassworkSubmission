@@ -1,0 +1,62 @@
+import java.util.ArrayList;
+
+public class ArrayListMethodsInDepth 
+{
+
+	public static void main(String[] args)
+	{
+		//Instantiate an ArrayList
+		ArrayList<String> foods = new ArrayList<String>();
+		
+		//add different food items 
+		foods.add("Apples");
+		foods.add("Bread");
+		foods.add("Cookies");
+		
+		//Task 1: Print out the size of the foods ArrayList. 
+		System.out.println(foods.size());
+		
+		//This method gives the length of the array list and in this case returned 3
+		
+		//Task 2: Inside of a print statement, add the String "Dole Whip" to foods. 
+		//In the line comment for this code, state what it prints.
+		System.out.println(foods.add("Dole Whip"));
+		//It should printed out "true"
+		
+		//This method adds Dole Whip to the end of the array list and returns a boolean, true
+		//The Add method adds an object to the end of the array list and will return a boolean
+		
+		//Print size of the food ArrayList
+		System.out.println(foods.size());
+		// It should've printed out 4 now with the addition of "Dole Whip"
+		
+		//Task 3: Inside of a print statement, use the .set(E) method to 
+		//change "Bread" in foods to "Butter". Comment what it prints. 
+		System.out.println(foods.set(1, "Butter"));
+		//Prints out bread 
+		
+		//This method changes bread to butter and but still returns bread
+		
+		//The set method will change the object at in index to another and will return 
+		//whatever object was changed
+		
+		//Print size
+			System.out.println(foods.size());
+		//should still print out 4
+			
+			//Task 4: Inside of a print statement, use the .remove(int) method to 
+			//remove "Cookies" from foods. Comment what it prints.
+			
+			System.out.println(foods.remove(2));
+			//Prints cookies
+			
+			//Task 5: This method removes Cookies from the array list and returns Cookies, the object removed. 
+			//The remove method will remove whatever object there is at the index provided and will return the object removed.
+			
+			
+			//Print size
+			System.out.println(foods.size());
+				
+			}
+
+		}
